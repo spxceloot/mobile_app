@@ -5,9 +5,33 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: Column(
-        children: [],
+      bottomSheet: NearbyParkingView(),
+      body: SizedBox(
+        height: size.height,
+        width: size.width,
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
+  }
+}
+
+class NearbyParkingView extends StatelessWidget {
+  const NearbyParkingView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: 200.0,
+      width: size.width,
+      child: ListView.builder(
+        itemCount: dummyParkingData,
+        itemBuilder: (context, int idx) {},
       ),
     );
   }
