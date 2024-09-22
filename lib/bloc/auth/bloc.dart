@@ -19,14 +19,16 @@ class AuthenticationBloc
   _appStarted(AppStarted event, Emitter emit) async {
     // check if first time app is used after installtion
     // and if on boarding is completed
-    if (await _checkIfFirstUseAfterInstall() || await _onboardingComplete()) {
-      // if true emit onboarding state
-      emit(OnboardingState());
-      return;
-    }
+    ///// if (await _checkIfFirstUseAfterInstall() || await _onboardingComplete()) {
+    // if true emit onboarding state
+    ///// emit(OnboardingState());
+    ///// return;
+    ///// }
 
     // checks if user is authenticated
-    await _init(emit);
+    ///// await _init(emit);
+
+    emit(AuthenticationAuthenticated());
   }
 
   // handle logged in event

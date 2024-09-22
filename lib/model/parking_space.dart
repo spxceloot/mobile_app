@@ -2,21 +2,24 @@ class ParkingSpace {
   final GeoLocation geoLocation;
   final Location location;
   final String name;
-  final pricePerHour;
+  final String imageUrl;
+  final double pricePerHour;
 
   ParkingSpace({
     required this.geoLocation,
     required this.location,
     required this.name,
     required this.pricePerHour,
+    required this.imageUrl,
   });
 
   factory ParkingSpace.fromMap(Map<String, dynamic> data) {
     return ParkingSpace(
-      geoLocation: data['geoLocation'],
-      location: data['location'],
+      geoLocation: GeoLocation.fromMap(data['geo_location']),
+      location: Location.fromMap(data['location']),
       name: data['name'],
-      pricePerHour: data['pricePerHour'],
+      pricePerHour: data['price_per_hour'],
+      imageUrl: data['image_url'],
     );
   }
 }
@@ -46,7 +49,7 @@ class Location {
     return Location(
       city: data['city']!,
       street: data['street']!,
-      suburb: data['suburd']!,
+      suburb: data['suburb']!,
     );
   }
 }

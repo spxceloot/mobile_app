@@ -42,10 +42,12 @@ class SignInView extends StatelessWidget {
         AuthButton(
           label: "Sign in",
           onPressed: () {
-            BlocProvider.of<AuthViewBloc>(context).add(SignInButtonPressed(
-              email: _emailController.text,
-              password: _passwordController.text,
-            ));
+            BlocProvider.of<AuthViewBloc>(context).add(
+              SignInButtonPressed(
+                email: _emailController.text,
+                password: _passwordController.text,
+              ),
+            );
           },
         )
       ],
